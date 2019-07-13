@@ -1,0 +1,162 @@
+// sass --watch main.sass:main.css
+
+$c-black: #000000
+$c-white: #FFFFFF
+$c-primary-black: #262626
+$c-primary-blue: #26262D
+//$c-primary-dark: #141414
+$c-accent: #345C82
+
+//$cc-header-bg: rgba($c-white, 0.25)
+$cc-header-bg: rgba($c-accent, 0.25)
+$cc-header-text: $c-white
+$cc-header-underline: $c-white
+$cc-bg: $c-primary-blue
+$cc-darken-screen: rgba($c-black, 0.4)
+$cc-text: $c-white
+
+
+
+body
+	margin: 0px
+	background-color: $cc-bg
+
+p
+	font-family: Arial
+	font-weight: 400
+	margin: 0px
+
+a
+	text-decoration: none
+
+.hidden
+	display: none
+
+div.spacer
+	margin: 0
+	padding: 0
+	height: 15px
+
+.header-link
+	font-family: 'Raleway'
+	font-size: 18px
+	color: $cc-header-text
+	text-align: center
+	line-height: 60px
+	transition-property: background-color, box-shadow, padding
+	transition-duration: 150ms
+	transition-timing-function: ease-in-out
+	cursor: pointer
+
+	&.active
+		background-color: $cc-header-bg
+		transition-property: box-shadow, padding
+
+	&:hover, &:active
+		background-color: $cc-header-bg
+		box-shadow: 0px -2px 0px $cc-header-underline inset
+
+header
+	background-color: $cc-header-bg
+	display: flex
+
+	.logo-div
+		min-width: 100px
+		width: 23.8%
+		max-width: 150px
+
+		img
+			height: 50px
+			width: 80px
+			padding: 5px 0px
+			display: block
+			margin-left: auto
+			margin-right: auto
+
+	nav
+		display: flex
+		width: 100%
+		justify-content: center
+
+		a
+			padding: 0px 15px
+
+			&:hover, &:active
+				padding: 0px 30px
+
+	.signin-buttons
+		display: flex
+
+		div
+			padding: 0px 10px
+
+.signin-modal
+	z-index: 8
+	position: absolute
+	top: 0
+	width: 100%
+	height: 100%
+	background-color: $cc-darken-screen
+	animation: add-opacity 0.2s ease-out
+
+
+	> div
+		z-index: 9
+		transform: translate(-50%, -50%)
+		left: 50%
+		top: 50%
+		position: absolute
+		width: 350px
+		background-color: $cc-bg
+		animation: open-modal 0.3s ease-out
+
+		header
+			height: 60px
+			background-color: $cc-header-bg
+
+			.login-tab
+				width: 50%
+
+			.register-tab
+				width: 50%
+
+		main
+			margin: 0 20px
+
+			.signin-form
+				text-align: center
+				color: $cc-text
+
+				input
+					padding: 10px 10px
+					border-width: 0px
+					box-sizing: border-box
+					width: 100%
+					background-color: $cc-header-bg
+					outline: none
+					color: $cc-text
+					font-size: 12px
+
+					&[name="submit"]
+						height: 50px
+						background-color: $cc-header-bg
+						font-size: 16px
+
+				div:not(.spacer)
+					background-color: $cc-header-bg
+
+.bg
+	width: 100%
+	position: absolute
+	z-index: -9
+	top: 0
+
+@keyframes add-opacity
+	0%
+		opacity: 0
+	100%
+		opacity: 100
+
+@keyframes open-modal
+	0%
+		transform: translate(200%, -150%) rotate(40deg)

@@ -1,0 +1,125 @@
+body {
+  margin: 0px;
+  background-color: #26262D; }
+
+p {
+  font-family: Arial;
+  font-weight: 400;
+  margin: 0px; }
+
+a {
+  text-decoration: none; }
+
+.hidden {
+  display: none; }
+
+div.spacer {
+  margin: 0;
+  padding: 0;
+  height: 15px; }
+
+.header-link {
+  font-family: "Raleway";
+  font-size: 18px;
+  color: #FFFFFF;
+  text-align: center;
+  line-height: 60px;
+  transition-property: background-color, box-shadow, padding;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+  cursor: pointer; }
+  .header-link.active {
+    background-color: rgba(52, 92, 130, 0.25);
+    transition-property: box-shadow, padding; }
+  .header-link:hover, .header-link:active {
+    background-color: rgba(52, 92, 130, 0.25);
+    box-shadow: 0px -2px 0px #FFFFFF inset; }
+
+header {
+  background-color: rgba(52, 92, 130, 0.25);
+  display: flex; }
+  header .logo-div {
+    min-width: 100px;
+    width: 23.8%;
+    max-width: 150px; }
+    header .logo-div img {
+      height: 50px;
+      width: 80px;
+      padding: 5px 0px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto; }
+  header nav {
+    display: flex;
+    width: 100%;
+    justify-content: center; }
+    header nav a {
+      padding: 0px 15px; }
+      header nav a:hover, header nav a:active {
+        padding: 0px 30px; }
+  header .signin-buttons {
+    display: flex; }
+    header .signin-buttons div {
+      padding: 0px 10px; }
+
+.signin-modal {
+  z-index: 8;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: add-opacity 0.2s ease-out; }
+  .signin-modal > div {
+    z-index: 9;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    width: 350px;
+    background-color: #26262D;
+    animation: open-modal 0.3s ease-out; }
+    .signin-modal > div header {
+      height: 60px;
+      background-color: rgba(52, 92, 130, 0.25); }
+      .signin-modal > div header .login-tab {
+        width: 50%; }
+      .signin-modal > div header .register-tab {
+        width: 50%; }
+    .signin-modal > div main {
+      margin: 0 20px; }
+      .signin-modal > div main .signin-form {
+        text-align: center;
+        color: #FFFFFF; }
+        .signin-modal > div main .signin-form input {
+          padding: 10px 10px;
+          border-width: 0px;
+          box-sizing: border-box;
+          width: 100%;
+          background-color: rgba(52, 92, 130, 0.25);
+          outline: none;
+          color: #FFFFFF;
+          font-size: 12px; }
+          .signin-modal > div main .signin-form input[name="submit"] {
+            height: 50px;
+            background-color: rgba(52, 92, 130, 0.25);
+            font-size: 16px; }
+        .signin-modal > div main .signin-form div:not(.spacer) {
+          background-color: rgba(52, 92, 130, 0.25); }
+
+.bg {
+  width: 100%;
+  position: absolute;
+  z-index: -9;
+  top: 0; }
+
+@keyframes add-opacity {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 100; } }
+@keyframes open-modal {
+  0% {
+    transform: translate(200%, -150%) rotate(40deg); } }
+
+/*# sourceMappingURL=main.css.map */
